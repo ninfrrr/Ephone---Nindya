@@ -29,7 +29,6 @@ namespace Ephone
         /// </summary>
         private void InitializeComponent()
         {
-            this.lbldisplay = new System.Windows.Forms.Label();
             this.btorder = new System.Windows.Forms.Button();
             this.txtkode = new System.Windows.Forms.TextBox();
             this.txtprov = new System.Windows.Forms.TextBox();
@@ -55,24 +54,16 @@ namespace Ephone
             this.lblbyr = new System.Windows.Forms.Label();
             this.btcod = new System.Windows.Forms.RadioButton();
             this.btmbank = new System.Windows.Forms.RadioButton();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btupdate = new System.Windows.Forms.Button();
+            this.btdelete = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // lbldisplay
-            // 
-            this.lbldisplay.AutoSize = true;
-            this.lbldisplay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(237)))), ((int)(((byte)(234)))));
-            this.lbldisplay.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbldisplay.Location = new System.Drawing.Point(510, 93);
-            this.lbldisplay.Name = "lbldisplay";
-            this.lbldisplay.Size = new System.Drawing.Size(252, 23);
-            this.lbldisplay.TabIndex = 45;
-            this.lbldisplay.Text = "Konfirmasi format order:";
-            this.lbldisplay.Click += new System.EventHandler(this.lbldisplay_Click);
             // 
             // btorder
             // 
             this.btorder.Font = new System.Drawing.Font("Arial Rounded MT Bold", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btorder.Location = new System.Drawing.Point(555, 496);
+            this.btorder.Location = new System.Drawing.Point(419, 520);
             this.btorder.Name = "btorder";
             this.btorder.Size = new System.Drawing.Size(130, 41);
             this.btorder.TabIndex = 44;
@@ -293,17 +284,51 @@ namespace Ephone
             this.btmbank.TabStop = true;
             this.btmbank.Text = "e-Money";
             this.btmbank.UseVisualStyleBackColor = true;
+            this.btmbank.CheckedChanged += new System.EventHandler(this.btmbank_CheckedChanged);
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(525, 96);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(805, 357);
+            this.dataGridView1.TabIndex = 49;
+            this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
+            // 
+            // btupdate
+            // 
+            this.btupdate.Location = new System.Drawing.Point(684, 464);
+            this.btupdate.Name = "btupdate";
+            this.btupdate.Size = new System.Drawing.Size(182, 78);
+            this.btupdate.TabIndex = 50;
+            this.btupdate.Text = "update";
+            this.btupdate.UseVisualStyleBackColor = true;
+            this.btupdate.Click += new System.EventHandler(this.btupdate_Click);
+            // 
+            // btdelete
+            // 
+            this.btdelete.Location = new System.Drawing.Point(1058, 464);
+            this.btdelete.Name = "btdelete";
+            this.btdelete.Size = new System.Drawing.Size(182, 78);
+            this.btdelete.TabIndex = 51;
+            this.btdelete.Text = "delete";
+            this.btdelete.UseVisualStyleBackColor = true;
+            this.btdelete.Click += new System.EventHandler(this.btdelete_Click);
             // 
             // formatOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(217)))), ((int)(((byte)(215)))));
-            this.ClientSize = new System.Drawing.Size(828, 590);
+            this.ClientSize = new System.Drawing.Size(1365, 590);
+            this.Controls.Add(this.btdelete);
+            this.Controls.Add(this.btupdate);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btmbank);
             this.Controls.Add(this.btcod);
             this.Controls.Add(this.lblbyr);
-            this.Controls.Add(this.lbldisplay);
             this.Controls.Add(this.btorder);
             this.Controls.Add(this.txtkode);
             this.Controls.Add(this.txtprov);
@@ -329,14 +354,13 @@ namespace Ephone
             this.Name = "formatOrder";
             this.Text = "formatOrder";
             this.Load += new System.EventHandler(this.formatOrder_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label lbldisplay;
         private System.Windows.Forms.Button btorder;
         private System.Windows.Forms.TextBox txtkode;
         private System.Windows.Forms.TextBox txtprov;
@@ -362,5 +386,8 @@ namespace Ephone
         private System.Windows.Forms.Label lblbyr;
         private System.Windows.Forms.RadioButton btcod;
         private System.Windows.Forms.RadioButton btmbank;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button btupdate;
+        private System.Windows.Forms.Button btdelete;
     }
 }

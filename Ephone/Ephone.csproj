@@ -64,6 +64,11 @@
     <Compile Include="ispec.cs" />
     <Compile Include="ivar.cs" />
     <Compile Include="order.cs" />
+    <Compile Include="orderfrmtDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>orderfrmtDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="otherVar.cs" />
     <Compile Include="payment.cs" />
     <Compile Include="pricelistS10.cs">
@@ -112,6 +117,17 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="orderfrmtDataSet.xsc">
+      <DependentUpon>orderfrmtDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="orderfrmtDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>orderfrmtDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="orderfrmtDataSet.xss">
+      <DependentUpon>orderfrmtDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
