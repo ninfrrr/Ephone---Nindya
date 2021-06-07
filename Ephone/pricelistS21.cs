@@ -21,20 +21,37 @@ namespace Ephone
 
         private void bt21_Click(object sender, EventArgs e)
         {
+            if (formor.IsDisposed == true)
+            {
+                formor = new formatOrder();
+            }
             MessageBox.Show("Harga S21: Rp 12.999.999");
             formor.Show();
         }
 
         private void bt21p_Click(object sender, EventArgs e)
         {
+            if (formor.IsDisposed == true)
+            {
+                formor = new formatOrder();
+            }
             MessageBox.Show("Harga S21+: Rp 14.999.999");
             formor.Show();
         }
 
         private void bt21u_Click(object sender, EventArgs e)
         {
+            if (formor.IsDisposed == true)
+            {
+                formor = new formatOrder();
+            }
             MessageBox.Show("Harga S21 Ultra: Rp 16.999.999");
             formor.Show();
+        }
+
+        private void pricelistS21_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -12,3 +12,17 @@ D:\ephone\Ephone\Ephone\bin\Debug\Ephone.exe
 D:\ephone\Ephone\Ephone\bin\Debug\Ephone.pdb
 D:\ephone\Ephone\Ephone\obj\Debug\Ephone.exe
 D:\ephone\Ephone\Ephone\obj\Debug\Ephone.pdb
+D:\ephone\7juniupdate\Ephone\bin\Debug\Ephone.exe.config
+D:\ephone\7juniupdate\Ephone\bin\Debug\Ephone.exe
+D:\ephone\7juniupdate\Ephone\bin\Debug\Ephone.pdb
+D:\ephone\7juniupdate\Ephone\obj\Debug\Ephone.csprojAssemblyReference.cache
+D:\ephone\7juniupdate\Ephone\obj\Debug\Ephone.Form1.resources
+D:\ephone\7juniupdate\Ephone\obj\Debug\Ephone.formatOrder.resources
+D:\ephone\7juniupdate\Ephone\obj\Debug\Ephone.pricelistS10.resources
+D:\ephone\7juniupdate\Ephone\obj\Debug\Ephone.pricelistS20.resources
+D:\ephone\7juniupdate\Ephone\obj\Debug\Ephone.pricelistS21.resources
+D:\ephone\7juniupdate\Ephone\obj\Debug\Ephone.Properties.Resources.resources
+D:\ephone\7juniupdate\Ephone\obj\Debug\Ephone.csproj.GenerateResource.cache
+D:\ephone\7juniupdate\Ephone\obj\Debug\Ephone.csproj.CoreCompileInputs.cache
+D:\ephone\7juniupdate\Ephone\obj\Debug\Ephone.exe
+D:\ephone\7juniupdate\Ephone\obj\Debug\Ephone.pdb

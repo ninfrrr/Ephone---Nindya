@@ -26,18 +26,30 @@ namespace Ephone
 
         private void bt10p_Click(object sender, EventArgs e)
         {
+            if (formor.IsDisposed == true)
+            {
+                formor = new formatOrder();
+            }
             MessageBox.Show("Harga S10+: Rp 11.499.999");
             formor.Show();
         }
 
         private void bt10e_Click(object sender, EventArgs e)
         {
+            if (formor.IsDisposed == true)
+            {
+                formor = new formatOrder();
+            }
             MessageBox.Show("Harga S10e: Rp 9.999.999");
             formor.Show(); 
         }
 
         private void bt10_Click_1(object sender, EventArgs e)
         {
+            if (formor.IsDisposed == true)
+            {
+                formor = new formatOrder();
+            }
             MessageBox.Show("Harga S10: Rp 10.499.999");
             formor.Show();
         }

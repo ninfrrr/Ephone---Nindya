@@ -28,6 +28,10 @@ namespace Ephone
 
         private void btS10_Click(object sender, EventArgs e)
         {
+            if (sten.IsDisposed == true)
+            {
+                sten = new pricelistS10();
+            }
             var a = new smartphone();
             a.priceList_S10(3);
             sten.Show();
@@ -35,6 +39,10 @@ namespace Ephone
 
         private void bts20_Click(object sender, EventArgs e)
         {
+            if (sdua.IsDisposed == true)
+            {
+                sdua = new pricelistS20();
+            }
             var b = new smartphone();
             b.priceList_S20(2);
             sdua.Show();
@@ -42,6 +50,10 @@ namespace Ephone
 
         private void bts21_Click(object sender, EventArgs e)
         {
+            if (s1.IsDisposed == true)
+            {
+                s1 = new pricelistS21();
+            }
             var c = new smartphone();
             c.priceList_S21(1);
             s1.Show();
