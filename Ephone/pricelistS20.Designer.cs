@@ -80,9 +80,9 @@ namespace Ephone
             // bt20u
             // 
             this.bt20u.Font = new System.Drawing.Font("Bebas Neue", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt20u.Location = new System.Drawing.Point(759, 441);
+            this.bt20u.Location = new System.Drawing.Point(743, 421);
             this.bt20u.Name = "bt20u";
-            this.bt20u.Size = new System.Drawing.Size(120, 60);
+            this.bt20u.Size = new System.Drawing.Size(145, 101);
             this.bt20u.TabIndex = 7;
             this.bt20u.Text = "S20 Ultra";
             this.bt20u.UseVisualStyleBackColor = true;

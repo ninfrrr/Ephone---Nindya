@@ -181,7 +181,7 @@ namespace Ephone
                 cmd = new SqlCommand("delete from beli where Format_id='" + ID + "'", con);
                 cmd.ExecuteNonQuery();
                 con.Close();
-                MessageBox.Show(" DELETED!");
+                MessageBox.Show("DELETED!");
                 display();
             }
             catch(Exception ex)
