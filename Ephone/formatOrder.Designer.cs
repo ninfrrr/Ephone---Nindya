@@ -57,13 +57,20 @@ namespace Ephone
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btupdate = new System.Windows.Forms.Button();
             this.btdelete = new System.Windows.Forms.Button();
+            this.lbltotal = new System.Windows.Forms.Label();
+            this.txttotal = new System.Windows.Forms.TextBox();
+            this.lblProduk = new System.Windows.Forms.Label();
+            this.txtProduk = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtjumlah = new System.Windows.Forms.TextBox();
+            this.updateproduk = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // btorder
             // 
             this.btorder.Font = new System.Drawing.Font("Arial Rounded MT Bold", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btorder.Location = new System.Drawing.Point(419, 520);
+            this.btorder.Location = new System.Drawing.Point(454, 523);
             this.btorder.Name = "btorder";
             this.btorder.Size = new System.Drawing.Size(130, 41);
             this.btorder.TabIndex = 44;
@@ -73,72 +80,82 @@ namespace Ephone
             // 
             // txtkode
             // 
+            this.txtkode.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtkode.Location = new System.Drawing.Point(201, 464);
             this.txtkode.Name = "txtkode";
-            this.txtkode.Size = new System.Drawing.Size(200, 22);
+            this.txtkode.Size = new System.Drawing.Size(200, 28);
             this.txtkode.TabIndex = 43;
             // 
             // txtprov
             // 
+            this.txtprov.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtprov.Location = new System.Drawing.Point(201, 411);
             this.txtprov.Name = "txtprov";
-            this.txtprov.Size = new System.Drawing.Size(200, 22);
+            this.txtprov.Size = new System.Drawing.Size(200, 28);
             this.txtprov.TabIndex = 42;
             // 
             // txtkab
             // 
+            this.txtkab.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtkab.Location = new System.Drawing.Point(201, 364);
             this.txtkab.Name = "txtkab";
-            this.txtkab.Size = new System.Drawing.Size(200, 22);
+            this.txtkab.Size = new System.Drawing.Size(200, 28);
             this.txtkab.TabIndex = 41;
             // 
             // txtkec
             // 
+            this.txtkec.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtkec.Location = new System.Drawing.Point(201, 314);
             this.txtkec.Name = "txtkec";
-            this.txtkec.Size = new System.Drawing.Size(200, 22);
+            this.txtkec.Size = new System.Drawing.Size(200, 28);
             this.txtkec.TabIndex = 40;
             // 
             // txtkel
             // 
+            this.txtkel.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtkel.Location = new System.Drawing.Point(201, 274);
             this.txtkel.Name = "txtkel";
-            this.txtkel.Size = new System.Drawing.Size(200, 22);
+            this.txtkel.Size = new System.Drawing.Size(200, 28);
             this.txtkel.TabIndex = 39;
             // 
             // txtrw
             // 
+            this.txtrw.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtrw.Location = new System.Drawing.Point(366, 231);
             this.txtrw.Name = "txtrw";
-            this.txtrw.Size = new System.Drawing.Size(70, 22);
+            this.txtrw.Size = new System.Drawing.Size(70, 28);
             this.txtrw.TabIndex = 38;
             // 
             // txtrt
             // 
+            this.txtrt.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtrt.Location = new System.Drawing.Point(102, 231);
             this.txtrt.Name = "txtrt";
-            this.txtrt.Size = new System.Drawing.Size(84, 22);
+            this.txtrt.Size = new System.Drawing.Size(84, 28);
             this.txtrt.TabIndex = 37;
             // 
             // txtjalan
             // 
+            this.txtjalan.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtjalan.Location = new System.Drawing.Point(201, 191);
             this.txtjalan.Name = "txtjalan";
-            this.txtjalan.Size = new System.Drawing.Size(200, 22);
+            this.txtjalan.Size = new System.Drawing.Size(200, 28);
             this.txtjalan.TabIndex = 36;
             // 
             // txtno
             // 
+            this.txtno.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtno.Location = new System.Drawing.Point(201, 149);
             this.txtno.Name = "txtno";
-            this.txtno.Size = new System.Drawing.Size(200, 22);
+            this.txtno.Size = new System.Drawing.Size(200, 28);
             this.txtno.TabIndex = 35;
             // 
             // txtnama
             // 
+            this.txtnama.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtnama.Location = new System.Drawing.Point(201, 100);
             this.txtnama.Name = "txtnama";
-            this.txtnama.Size = new System.Drawing.Size(200, 22);
+            this.txtnama.Size = new System.Drawing.Size(200, 28);
             this.txtnama.TabIndex = 34;
             // 
             // lblkode
@@ -265,9 +282,10 @@ namespace Ephone
             // btcod
             // 
             this.btcod.AutoSize = true;
+            this.btcod.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btcod.Location = new System.Drawing.Point(208, 513);
             this.btcod.Name = "btcod";
-            this.btcod.Size = new System.Drawing.Size(180, 21);
+            this.btcod.Size = new System.Drawing.Size(213, 24);
             this.btcod.TabIndex = 47;
             this.btcod.TabStop = true;
             this.btcod.Text = "Cash on Delivery (COD)";
@@ -277,9 +295,10 @@ namespace Ephone
             // btmbank
             // 
             this.btmbank.AutoSize = true;
+            this.btmbank.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btmbank.Location = new System.Drawing.Point(208, 540);
             this.btmbank.Name = "btmbank";
-            this.btmbank.Size = new System.Drawing.Size(84, 21);
+            this.btmbank.Size = new System.Drawing.Size(94, 24);
             this.btmbank.TabIndex = 48;
             this.btmbank.TabStop = true;
             this.btmbank.Text = "e-Money";
@@ -299,6 +318,7 @@ namespace Ephone
             // 
             // btupdate
             // 
+            this.btupdate.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btupdate.Location = new System.Drawing.Point(684, 464);
             this.btupdate.Name = "btupdate";
             this.btupdate.Size = new System.Drawing.Size(182, 78);
@@ -309,6 +329,7 @@ namespace Ephone
             // 
             // btdelete
             // 
+            this.btdelete.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btdelete.Location = new System.Drawing.Point(1058, 464);
             this.btdelete.Name = "btdelete";
             this.btdelete.Size = new System.Drawing.Size(182, 78);
@@ -317,12 +338,84 @@ namespace Ephone
             this.btdelete.UseVisualStyleBackColor = true;
             this.btdelete.Click += new System.EventHandler(this.btdelete_Click);
             // 
+            // lbltotal
+            // 
+            this.lbltotal.AutoSize = true;
+            this.lbltotal.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbltotal.Location = new System.Drawing.Point(24, 657);
+            this.lbltotal.Name = "lbltotal";
+            this.lbltotal.Size = new System.Drawing.Size(162, 24);
+            this.lbltotal.TabIndex = 52;
+            this.lbltotal.Text = "Total Pembelian:";
+            // 
+            // txttotal
+            // 
+            this.txttotal.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txttotal.Location = new System.Drawing.Point(201, 657);
+            this.txttotal.Name = "txttotal";
+            this.txttotal.Size = new System.Drawing.Size(200, 28);
+            this.txttotal.TabIndex = 53;
+            // 
+            // lblProduk
+            // 
+            this.lblProduk.AutoSize = true;
+            this.lblProduk.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProduk.Location = new System.Drawing.Point(24, 579);
+            this.lblProduk.Name = "lblProduk";
+            this.lblProduk.Size = new System.Drawing.Size(136, 24);
+            this.lblProduk.TabIndex = 54;
+            this.lblProduk.Text = "Nama Produk:";
+            // 
+            // txtProduk
+            // 
+            this.txtProduk.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtProduk.Location = new System.Drawing.Point(201, 570);
+            this.txtProduk.Name = "txtProduk";
+            this.txtProduk.Size = new System.Drawing.Size(200, 28);
+            this.txtProduk.TabIndex = 55;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(24, 620);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(147, 24);
+            this.label1.TabIndex = 56;
+            this.label1.Text = "Jumlah Produk:";
+            // 
+            // txtjumlah
+            // 
+            this.txtjumlah.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtjumlah.Location = new System.Drawing.Point(201, 616);
+            this.txtjumlah.Name = "txtjumlah";
+            this.txtjumlah.Size = new System.Drawing.Size(200, 28);
+            this.txtjumlah.TabIndex = 57;
+            // 
+            // updateproduk
+            // 
+            this.updateproduk.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.updateproduk.Location = new System.Drawing.Point(429, 611);
+            this.updateproduk.Name = "updateproduk";
+            this.updateproduk.Size = new System.Drawing.Size(155, 33);
+            this.updateproduk.TabIndex = 58;
+            this.updateproduk.Text = "Update produk";
+            this.updateproduk.UseVisualStyleBackColor = true;
+            this.updateproduk.Click += new System.EventHandler(this.updateproduk_Click);
+            // 
             // formatOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(217)))), ((int)(((byte)(215)))));
-            this.ClientSize = new System.Drawing.Size(1365, 590);
+            this.ClientSize = new System.Drawing.Size(1365, 719);
+            this.Controls.Add(this.updateproduk);
+            this.Controls.Add(this.txtjumlah);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.txtProduk);
+            this.Controls.Add(this.lblProduk);
+            this.Controls.Add(this.txttotal);
+            this.Controls.Add(this.lbltotal);
             this.Controls.Add(this.btdelete);
             this.Controls.Add(this.btupdate);
             this.Controls.Add(this.dataGridView1);
@@ -389,5 +482,12 @@ namespace Ephone
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btupdate;
         private System.Windows.Forms.Button btdelete;
+        private System.Windows.Forms.Label lbltotal;
+        private System.Windows.Forms.TextBox txttotal;
+        private System.Windows.Forms.Label lblProduk;
+        private System.Windows.Forms.TextBox txtProduk;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtjumlah;
+        private System.Windows.Forms.Button updateproduk;
     }
 }

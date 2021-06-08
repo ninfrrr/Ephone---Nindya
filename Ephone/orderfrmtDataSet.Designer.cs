@@ -285,6 +285,8 @@ namespace Ephone {
             
             private global::System.Data.DataColumn columnnohp;
             
+            private global::System.Data.DataColumn columnnamajalan;
+            
             private global::System.Data.DataColumn columnerte;
             
             private global::System.Data.DataColumn columnerwe;
@@ -300,6 +302,10 @@ namespace Ephone {
             private global::System.Data.DataColumn columnkodpos;
             
             private global::System.Data.DataColumn columnbayar;
+            
+            private global::System.Data.DataColumn columnharga;
+            
+            private global::System.Data.DataColumn columnproduk;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -355,6 +361,14 @@ namespace Ephone {
             public global::System.Data.DataColumn nohpColumn {
                 get {
                     return this.columnnohp;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn namajalanColumn {
+                get {
+                    return this.columnnamajalan;
                 }
             }
             
@@ -424,6 +438,22 @@ namespace Ephone {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn hargaColumn {
+                get {
+                    return this.columnharga;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn produkColumn {
+                get {
+                    return this.columnproduk;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -459,12 +489,13 @@ namespace Ephone {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public beliRow AddbeliRow(string namauser, string nohp, string erte, string erwe, string kelur, string kecam, string kabup, string prov, string kodpos, string bayar) {
+            public beliRow AddbeliRow(string namauser, string nohp, string namajalan, string erte, string erwe, string kelur, string kecam, string kabup, string prov, string kodpos, string bayar, string harga, string produk) {
                 beliRow rowbeliRow = ((beliRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         namauser,
                         nohp,
+                        namajalan,
                         erte,
                         erwe,
                         kelur,
@@ -472,7 +503,9 @@ namespace Ephone {
                         kabup,
                         prov,
                         kodpos,
-                        bayar};
+                        bayar,
+                        harga,
+                        produk};
                 rowbeliRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowbeliRow);
                 return rowbeliRow;
@@ -505,6 +538,7 @@ namespace Ephone {
                 this.columnFormat_id = base.Columns["Format_id"];
                 this.columnnamauser = base.Columns["namauser"];
                 this.columnnohp = base.Columns["nohp"];
+                this.columnnamajalan = base.Columns["namajalan"];
                 this.columnerte = base.Columns["erte"];
                 this.columnerwe = base.Columns["erwe"];
                 this.columnkelur = base.Columns["kelur"];
@@ -513,6 +547,8 @@ namespace Ephone {
                 this.columnprov = base.Columns["prov"];
                 this.columnkodpos = base.Columns["kodpos"];
                 this.columnbayar = base.Columns["bayar"];
+                this.columnharga = base.Columns["harga"];
+                this.columnproduk = base.Columns["produk"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -524,6 +560,8 @@ namespace Ephone {
                 base.Columns.Add(this.columnnamauser);
                 this.columnnohp = new global::System.Data.DataColumn("nohp", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnnohp);
+                this.columnnamajalan = new global::System.Data.DataColumn("namajalan", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnnamajalan);
                 this.columnerte = new global::System.Data.DataColumn("erte", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnerte);
                 this.columnerwe = new global::System.Data.DataColumn("erwe", typeof(string), null, global::System.Data.MappingType.Element);
@@ -540,6 +578,10 @@ namespace Ephone {
                 base.Columns.Add(this.columnkodpos);
                 this.columnbayar = new global::System.Data.DataColumn("bayar", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnbayar);
+                this.columnharga = new global::System.Data.DataColumn("harga", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnharga);
+                this.columnproduk = new global::System.Data.DataColumn("produk", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnproduk);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnFormat_id}, true));
                 this.columnFormat_id.AutoIncrement = true;
@@ -548,16 +590,29 @@ namespace Ephone {
                 this.columnFormat_id.AllowDBNull = false;
                 this.columnFormat_id.ReadOnly = true;
                 this.columnFormat_id.Unique = true;
+                this.columnnamauser.AllowDBNull = false;
                 this.columnnamauser.MaxLength = 200;
+                this.columnnohp.AllowDBNull = false;
                 this.columnnohp.MaxLength = 20;
+                this.columnnamajalan.MaxLength = 100;
+                this.columnerte.AllowDBNull = false;
                 this.columnerte.MaxLength = 5;
+                this.columnerwe.AllowDBNull = false;
                 this.columnerwe.MaxLength = 5;
+                this.columnkelur.AllowDBNull = false;
                 this.columnkelur.MaxLength = 200;
+                this.columnkecam.AllowDBNull = false;
                 this.columnkecam.MaxLength = 200;
+                this.columnkabup.AllowDBNull = false;
                 this.columnkabup.MaxLength = 200;
+                this.columnprov.AllowDBNull = false;
                 this.columnprov.MaxLength = 200;
+                this.columnkodpos.AllowDBNull = false;
                 this.columnkodpos.MaxLength = 100;
+                this.columnbayar.AllowDBNull = false;
                 this.columnbayar.MaxLength = 50;
+                this.columnharga.MaxLength = 50;
+                this.columnproduk.MaxLength = 50;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -713,12 +768,7 @@ namespace Ephone {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string namauser {
                 get {
-                    try {
-                        return ((string)(this[this.tablebeli.namauserColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'namauser\' in table \'beli\' is DBNull.", e);
-                    }
+                    return ((string)(this[this.tablebeli.namauserColumn]));
                 }
                 set {
                     this[this.tablebeli.namauserColumn] = value;
@@ -729,12 +779,7 @@ namespace Ephone {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string nohp {
                 get {
-                    try {
-                        return ((string)(this[this.tablebeli.nohpColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'nohp\' in table \'beli\' is DBNull.", e);
-                    }
+                    return ((string)(this[this.tablebeli.nohpColumn]));
                 }
                 set {
                     this[this.tablebeli.nohpColumn] = value;
@@ -743,14 +788,25 @@ namespace Ephone {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string erte {
+            public string namajalan {
                 get {
                     try {
-                        return ((string)(this[this.tablebeli.erteColumn]));
+                        return ((string)(this[this.tablebeli.namajalanColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'erte\' in table \'beli\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'namajalan\' in table \'beli\' is DBNull.", e);
                     }
+                }
+                set {
+                    this[this.tablebeli.namajalanColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string erte {
+                get {
+                    return ((string)(this[this.tablebeli.erteColumn]));
                 }
                 set {
                     this[this.tablebeli.erteColumn] = value;
@@ -761,12 +817,7 @@ namespace Ephone {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string erwe {
                 get {
-                    try {
-                        return ((string)(this[this.tablebeli.erweColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'erwe\' in table \'beli\' is DBNull.", e);
-                    }
+                    return ((string)(this[this.tablebeli.erweColumn]));
                 }
                 set {
                     this[this.tablebeli.erweColumn] = value;
@@ -777,12 +828,7 @@ namespace Ephone {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string kelur {
                 get {
-                    try {
-                        return ((string)(this[this.tablebeli.kelurColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'kelur\' in table \'beli\' is DBNull.", e);
-                    }
+                    return ((string)(this[this.tablebeli.kelurColumn]));
                 }
                 set {
                     this[this.tablebeli.kelurColumn] = value;
@@ -793,12 +839,7 @@ namespace Ephone {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string kecam {
                 get {
-                    try {
-                        return ((string)(this[this.tablebeli.kecamColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'kecam\' in table \'beli\' is DBNull.", e);
-                    }
+                    return ((string)(this[this.tablebeli.kecamColumn]));
                 }
                 set {
                     this[this.tablebeli.kecamColumn] = value;
@@ -809,12 +850,7 @@ namespace Ephone {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string kabup {
                 get {
-                    try {
-                        return ((string)(this[this.tablebeli.kabupColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'kabup\' in table \'beli\' is DBNull.", e);
-                    }
+                    return ((string)(this[this.tablebeli.kabupColumn]));
                 }
                 set {
                     this[this.tablebeli.kabupColumn] = value;
@@ -825,12 +861,7 @@ namespace Ephone {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string prov {
                 get {
-                    try {
-                        return ((string)(this[this.tablebeli.provColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'prov\' in table \'beli\' is DBNull.", e);
-                    }
+                    return ((string)(this[this.tablebeli.provColumn]));
                 }
                 set {
                     this[this.tablebeli.provColumn] = value;
@@ -841,12 +872,7 @@ namespace Ephone {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string kodpos {
                 get {
-                    try {
-                        return ((string)(this[this.tablebeli.kodposColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'kodpos\' in table \'beli\' is DBNull.", e);
-                    }
+                    return ((string)(this[this.tablebeli.kodposColumn]));
                 }
                 set {
                     this[this.tablebeli.kodposColumn] = value;
@@ -857,12 +883,7 @@ namespace Ephone {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string bayar {
                 get {
-                    try {
-                        return ((string)(this[this.tablebeli.bayarColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'bayar\' in table \'beli\' is DBNull.", e);
-                    }
+                    return ((string)(this[this.tablebeli.bayarColumn]));
                 }
                 set {
                     this[this.tablebeli.bayarColumn] = value;
@@ -871,122 +892,70 @@ namespace Ephone {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsnamauserNull() {
-                return this.IsNull(this.tablebeli.namauserColumn);
+            public string harga {
+                get {
+                    try {
+                        return ((string)(this[this.tablebeli.hargaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'harga\' in table \'beli\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablebeli.hargaColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetnamauserNull() {
-                this[this.tablebeli.namauserColumn] = global::System.Convert.DBNull;
+            public string produk {
+                get {
+                    try {
+                        return ((string)(this[this.tablebeli.produkColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'produk\' in table \'beli\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablebeli.produkColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsnohpNull() {
-                return this.IsNull(this.tablebeli.nohpColumn);
+            public bool IsnamajalanNull() {
+                return this.IsNull(this.tablebeli.namajalanColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetnohpNull() {
-                this[this.tablebeli.nohpColumn] = global::System.Convert.DBNull;
+            public void SetnamajalanNull() {
+                this[this.tablebeli.namajalanColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IserteNull() {
-                return this.IsNull(this.tablebeli.erteColumn);
+            public bool IshargaNull() {
+                return this.IsNull(this.tablebeli.hargaColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SeterteNull() {
-                this[this.tablebeli.erteColumn] = global::System.Convert.DBNull;
+            public void SethargaNull() {
+                this[this.tablebeli.hargaColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IserweNull() {
-                return this.IsNull(this.tablebeli.erweColumn);
+            public bool IsprodukNull() {
+                return this.IsNull(this.tablebeli.produkColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SeterweNull() {
-                this[this.tablebeli.erweColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IskelurNull() {
-                return this.IsNull(this.tablebeli.kelurColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetkelurNull() {
-                this[this.tablebeli.kelurColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IskecamNull() {
-                return this.IsNull(this.tablebeli.kecamColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetkecamNull() {
-                this[this.tablebeli.kecamColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IskabupNull() {
-                return this.IsNull(this.tablebeli.kabupColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetkabupNull() {
-                this[this.tablebeli.kabupColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsprovNull() {
-                return this.IsNull(this.tablebeli.provColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetprovNull() {
-                this[this.tablebeli.provColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IskodposNull() {
-                return this.IsNull(this.tablebeli.kodposColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetkodposNull() {
-                this[this.tablebeli.kodposColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsbayarNull() {
-                return this.IsNull(this.tablebeli.bayarColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetbayarNull() {
-                this[this.tablebeli.bayarColumn] = global::System.Convert.DBNull;
+            public void SetprodukNull() {
+                this[this.tablebeli.produkColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -1152,6 +1121,7 @@ namespace Ephone.orderfrmtDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("Format_id", "Format_id");
             tableMapping.ColumnMappings.Add("namauser", "namauser");
             tableMapping.ColumnMappings.Add("nohp", "nohp");
+            tableMapping.ColumnMappings.Add("namajalan", "namajalan");
             tableMapping.ColumnMappings.Add("erte", "erte");
             tableMapping.ColumnMappings.Add("erwe", "erwe");
             tableMapping.ColumnMappings.Add("kelur", "kelur");
@@ -1160,39 +1130,38 @@ namespace Ephone.orderfrmtDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("prov", "prov");
             tableMapping.ColumnMappings.Add("kodpos", "kodpos");
             tableMapping.ColumnMappings.Add("bayar", "bayar");
+            tableMapping.ColumnMappings.Add("harga", "harga");
+            tableMapping.ColumnMappings.Add("produk", "produk");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[beli] WHERE (([Format_id] = @Original_Format_id) AND ((@IsNull_namauser = 1 AND [namauser] IS NULL) OR ([namauser] = @Original_namauser)) AND ((@IsNull_nohp = 1 AND [nohp] IS NULL) OR ([nohp] = @Original_nohp)) AND ((@IsNull_erte = 1 AND [erte] IS NULL) OR ([erte] = @Original_erte)) AND ((@IsNull_erwe = 1 AND [erwe] IS NULL) OR ([erwe] = @Original_erwe)) AND ((@IsNull_kelur = 1 AND [kelur] IS NULL) OR ([kelur] = @Original_kelur)) AND ((@IsNull_kecam = 1 AND [kecam] IS NULL) OR ([kecam] = @Original_kecam)) AND ((@IsNull_kabup = 1 AND [kabup] IS NULL) OR ([kabup] = @Original_kabup)) AND ((@IsNull_prov = 1 AND [prov] IS NULL) OR ([prov] = @Original_prov)) AND ((@IsNull_kodpos = 1 AND [kodpos] IS NULL) OR ([kodpos] = @Original_kodpos)) AND ((@IsNull_bayar = 1 AND [bayar] IS NULL) OR ([bayar] = @Original_bayar)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[beli] WHERE (([Format_id] = @Original_Format_id) AND ([namauser] = @Original_namauser) AND ([nohp] = @Original_nohp) AND ((@IsNull_namajalan = 1 AND [namajalan] IS NULL) OR ([namajalan] = @Original_namajalan)) AND ([erte] = @Original_erte) AND ([erwe] = @Original_erwe) AND ([kelur] = @Original_kelur) AND ([kecam] = @Original_kecam) AND ([kabup] = @Original_kabup) AND ([prov] = @Original_prov) AND ([kodpos] = @Original_kodpos) AND ([bayar] = @Original_bayar) AND ((@IsNull_harga = 1 AND [harga] IS NULL) OR ([harga] = @Original_harga)) AND ((@IsNull_produk = 1 AND [produk] IS NULL) OR ([produk] = @Original_produk)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Format_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Format_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_namauser", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "namauser", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_namauser", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "namauser", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_nohp", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nohp", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_nohp", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nohp", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_erte", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "erte", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_namajalan", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "namajalan", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_namajalan", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "namajalan", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_erte", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "erte", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_erwe", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "erwe", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_erwe", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "erwe", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_kelur", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "kelur", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_kelur", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "kelur", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_kecam", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "kecam", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_kecam", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "kecam", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_kabup", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "kabup", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_kabup", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "kabup", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_prov", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "prov", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_prov", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "prov", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_kodpos", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "kodpos", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_kodpos", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "kodpos", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_bayar", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "bayar", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_bayar", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "bayar", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_harga", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "harga", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_harga", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "harga", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_produk", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "produk", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_produk", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "produk", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[beli] ([namauser], [nohp], [erte], [erwe], [kelur], [kecam], [kabup], [prov], [kodpos], [bayar]) VALUES (@namauser, @nohp, @erte, @erwe, @kelur, @kecam, @kabup, @prov, @kodpos, @bayar);
-SELECT Format_id, namauser, nohp, erte, erwe, kelur, kecam, kabup, prov, kodpos, bayar FROM beli WHERE (Format_id = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[beli] ([namauser], [nohp], [namajalan], [erte], [erwe], [kelur], [kecam], [kabup], [prov], [kodpos], [bayar], [harga], [produk]) VALUES (@namauser, @nohp, @namajalan, @erte, @erwe, @kelur, @kecam, @kabup, @prov, @kodpos, @bayar, @harga, @produk);
+SELECT Format_id, namauser, nohp, namajalan, erte, erwe, kelur, kecam, kabup, prov, kodpos, bayar, harga, produk FROM beli WHERE (Format_id = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@namauser", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "namauser", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nohp", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nohp", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@namajalan", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "namajalan", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@erte", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "erte", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@erwe", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "erwe", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@kelur", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "kelur", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -1201,13 +1170,16 @@ SELECT Format_id, namauser, nohp, erte, erwe, kelur, kecam, kabup, prov, kodpos,
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@prov", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "prov", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@kodpos", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "kodpos", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@bayar", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "bayar", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@harga", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "harga", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@produk", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "produk", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[beli] SET [namauser] = @namauser, [nohp] = @nohp, [erte] = @erte, [erwe] = @erwe, [kelur] = @kelur, [kecam] = @kecam, [kabup] = @kabup, [prov] = @prov, [kodpos] = @kodpos, [bayar] = @bayar WHERE (([Format_id] = @Original_Format_id) AND ((@IsNull_namauser = 1 AND [namauser] IS NULL) OR ([namauser] = @Original_namauser)) AND ((@IsNull_nohp = 1 AND [nohp] IS NULL) OR ([nohp] = @Original_nohp)) AND ((@IsNull_erte = 1 AND [erte] IS NULL) OR ([erte] = @Original_erte)) AND ((@IsNull_erwe = 1 AND [erwe] IS NULL) OR ([erwe] = @Original_erwe)) AND ((@IsNull_kelur = 1 AND [kelur] IS NULL) OR ([kelur] = @Original_kelur)) AND ((@IsNull_kecam = 1 AND [kecam] IS NULL) OR ([kecam] = @Original_kecam)) AND ((@IsNull_kabup = 1 AND [kabup] IS NULL) OR ([kabup] = @Original_kabup)) AND ((@IsNull_prov = 1 AND [prov] IS NULL) OR ([prov] = @Original_prov)) AND ((@IsNull_kodpos = 1 AND [kodpos] IS NULL) OR ([kodpos] = @Original_kodpos)) AND ((@IsNull_bayar = 1 AND [bayar] IS NULL) OR ([bayar] = @Original_bayar)));
-SELECT Format_id, namauser, nohp, erte, erwe, kelur, kecam, kabup, prov, kodpos, bayar FROM beli WHERE (Format_id = @Format_id)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[beli] SET [namauser] = @namauser, [nohp] = @nohp, [namajalan] = @namajalan, [erte] = @erte, [erwe] = @erwe, [kelur] = @kelur, [kecam] = @kecam, [kabup] = @kabup, [prov] = @prov, [kodpos] = @kodpos, [bayar] = @bayar, [harga] = @harga, [produk] = @produk WHERE (([Format_id] = @Original_Format_id) AND ([namauser] = @Original_namauser) AND ([nohp] = @Original_nohp) AND ((@IsNull_namajalan = 1 AND [namajalan] IS NULL) OR ([namajalan] = @Original_namajalan)) AND ([erte] = @Original_erte) AND ([erwe] = @Original_erwe) AND ([kelur] = @Original_kelur) AND ([kecam] = @Original_kecam) AND ([kabup] = @Original_kabup) AND ([prov] = @Original_prov) AND ([kodpos] = @Original_kodpos) AND ([bayar] = @Original_bayar) AND ((@IsNull_harga = 1 AND [harga] IS NULL) OR ([harga] = @Original_harga)) AND ((@IsNull_produk = 1 AND [produk] IS NULL) OR ([produk] = @Original_produk)));
+SELECT Format_id, namauser, nohp, namajalan, erte, erwe, kelur, kecam, kabup, prov, kodpos, bayar, harga, produk FROM beli WHERE (Format_id = @Format_id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@namauser", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "namauser", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nohp", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nohp", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@namajalan", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "namajalan", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@erte", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "erte", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@erwe", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "erwe", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@kelur", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "kelur", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -1216,27 +1188,25 @@ SELECT Format_id, namauser, nohp, erte, erwe, kelur, kecam, kabup, prov, kodpos,
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@prov", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "prov", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@kodpos", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "kodpos", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@bayar", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "bayar", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@harga", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "harga", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@produk", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "produk", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Format_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Format_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_namauser", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "namauser", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_namauser", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "namauser", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_nohp", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nohp", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_nohp", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nohp", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_erte", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "erte", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_namajalan", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "namajalan", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_namajalan", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "namajalan", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_erte", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "erte", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_erwe", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "erwe", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_erwe", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "erwe", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_kelur", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "kelur", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_kelur", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "kelur", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_kecam", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "kecam", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_kecam", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "kecam", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_kabup", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "kabup", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_kabup", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "kabup", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_prov", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "prov", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_prov", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "prov", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_kodpos", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "kodpos", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_kodpos", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "kodpos", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_bayar", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "bayar", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_bayar", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "bayar", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_harga", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "harga", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_harga", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "harga", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_produk", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "produk", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_produk", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "produk", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Format_id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Format_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -1253,8 +1223,8 @@ SELECT Format_id, namauser, nohp, erte, erwe, kelur, kecam, kabup, prov, kodpos,
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Format_id, namauser, nohp, erte, erwe, kelur, kecam, kabup, prov, kodpos, " +
-                "bayar FROM dbo.beli";
+            this._commandCollection[0].CommandText = "SELECT Format_id, namauser, nohp, namajalan, erte, erwe, kelur, kecam, kabup, pro" +
+                "v, kodpos, bayar, harga, produk FROM dbo.beli";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -1315,87 +1285,91 @@ SELECT Format_id, namauser, nohp, erte, erwe, kelur, kecam, kabup, prov, kodpos,
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_Format_id, string Original_namauser, string Original_nohp, string Original_erte, string Original_erwe, string Original_kelur, string Original_kecam, string Original_kabup, string Original_prov, string Original_kodpos, string Original_bayar) {
+        public virtual int Delete(int Original_Format_id, string Original_namauser, string Original_nohp, string Original_namajalan, string Original_erte, string Original_erwe, string Original_kelur, string Original_kecam, string Original_kabup, string Original_prov, string Original_kodpos, string Original_bayar, string Original_harga, string Original_produk) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_Format_id));
             if ((Original_namauser == null)) {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("Original_namauser");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_namauser));
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_namauser));
             }
             if ((Original_nohp == null)) {
+                throw new global::System.ArgumentNullException("Original_nohp");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_nohp));
+            }
+            if ((Original_namajalan == null)) {
                 this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_nohp));
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_namajalan));
             }
             if ((Original_erte == null)) {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("Original_erte");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_erte));
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((string)(Original_erte));
             }
             if ((Original_erwe == null)) {
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("Original_erwe");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((string)(Original_erwe));
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_erwe));
             }
             if ((Original_kelur == null)) {
-                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[10].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("Original_kelur");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[10].Value = ((string)(Original_kelur));
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((string)(Original_kelur));
             }
             if ((Original_kecam == null)) {
-                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[12].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("Original_kecam");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[12].Value = ((string)(Original_kecam));
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((string)(Original_kecam));
             }
             if ((Original_kabup == null)) {
+                throw new global::System.ArgumentNullException("Original_kabup");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[9].Value = ((string)(Original_kabup));
+            }
+            if ((Original_prov == null)) {
+                throw new global::System.ArgumentNullException("Original_prov");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[10].Value = ((string)(Original_prov));
+            }
+            if ((Original_kodpos == null)) {
+                throw new global::System.ArgumentNullException("Original_kodpos");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[11].Value = ((string)(Original_kodpos));
+            }
+            if ((Original_bayar == null)) {
+                throw new global::System.ArgumentNullException("Original_bayar");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[12].Value = ((string)(Original_bayar));
+            }
+            if ((Original_harga == null)) {
                 this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[14].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[14].Value = ((string)(Original_kabup));
+                this.Adapter.DeleteCommand.Parameters[14].Value = ((string)(Original_harga));
             }
-            if ((Original_prov == null)) {
+            if ((Original_produk == null)) {
                 this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[16].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[16].Value = ((string)(Original_prov));
-            }
-            if ((Original_kodpos == null)) {
-                this.Adapter.DeleteCommand.Parameters[17].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[18].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[17].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[18].Value = ((string)(Original_kodpos));
-            }
-            if ((Original_bayar == null)) {
-                this.Adapter.DeleteCommand.Parameters[19].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[20].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[19].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[20].Value = ((string)(Original_bayar));
+                this.Adapter.DeleteCommand.Parameters[16].Value = ((string)(Original_produk));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1417,66 +1391,84 @@ SELECT Format_id, namauser, nohp, erte, erwe, kelur, kecam, kabup, prov, kodpos,
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string namauser, string nohp, string erte, string erwe, string kelur, string kecam, string kabup, string prov, string kodpos, string bayar) {
+        public virtual int Insert(string namauser, string nohp, string namajalan, string erte, string erwe, string kelur, string kecam, string kabup, string prov, string kodpos, string bayar, string harga, string produk) {
             if ((namauser == null)) {
-                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("namauser");
             }
             else {
                 this.Adapter.InsertCommand.Parameters[0].Value = ((string)(namauser));
             }
             if ((nohp == null)) {
-                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("nohp");
             }
             else {
                 this.Adapter.InsertCommand.Parameters[1].Value = ((string)(nohp));
             }
-            if ((erte == null)) {
+            if ((namajalan == null)) {
                 this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(erte));
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(namajalan));
+            }
+            if ((erte == null)) {
+                throw new global::System.ArgumentNullException("erte");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(erte));
             }
             if ((erwe == null)) {
-                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("erwe");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(erwe));
+                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(erwe));
             }
             if ((kelur == null)) {
-                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("kelur");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(kelur));
+                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(kelur));
             }
             if ((kecam == null)) {
-                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("kecam");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(kecam));
+                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(kecam));
             }
             if ((kabup == null)) {
-                this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("kabup");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(kabup));
+                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(kabup));
             }
             if ((prov == null)) {
-                this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("prov");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(prov));
+                this.Adapter.InsertCommand.Parameters[8].Value = ((string)(prov));
             }
             if ((kodpos == null)) {
-                this.Adapter.InsertCommand.Parameters[8].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("kodpos");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[8].Value = ((string)(kodpos));
+                this.Adapter.InsertCommand.Parameters[9].Value = ((string)(kodpos));
             }
             if ((bayar == null)) {
-                this.Adapter.InsertCommand.Parameters[9].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("bayar");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[9].Value = ((string)(bayar));
+                this.Adapter.InsertCommand.Parameters[10].Value = ((string)(bayar));
+            }
+            if ((harga == null)) {
+                this.Adapter.InsertCommand.Parameters[11].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[11].Value = ((string)(harga));
+            }
+            if ((produk == null)) {
+                this.Adapter.InsertCommand.Parameters[12].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[12].Value = ((string)(produk));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1501,6 +1493,7 @@ SELECT Format_id, namauser, nohp, erte, erwe, kelur, kecam, kabup, prov, kodpos,
         public virtual int Update(
                     string namauser, 
                     string nohp, 
+                    string namajalan, 
                     string erte, 
                     string erwe, 
                     string kelur, 
@@ -1509,9 +1502,12 @@ SELECT Format_id, namauser, nohp, erte, erwe, kelur, kecam, kabup, prov, kodpos,
                     string prov, 
                     string kodpos, 
                     string bayar, 
+                    string harga, 
+                    string produk, 
                     int Original_Format_id, 
                     string Original_namauser, 
                     string Original_nohp, 
+                    string Original_namajalan, 
                     string Original_erte, 
                     string Original_erwe, 
                     string Original_kelur, 
@@ -1520,149 +1516,173 @@ SELECT Format_id, namauser, nohp, erte, erwe, kelur, kecam, kabup, prov, kodpos,
                     string Original_prov, 
                     string Original_kodpos, 
                     string Original_bayar, 
+                    string Original_harga, 
+                    string Original_produk, 
                     int Format_id) {
             if ((namauser == null)) {
-                this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("namauser");
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(namauser));
             }
             if ((nohp == null)) {
-                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("nohp");
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(nohp));
             }
-            if ((erte == null)) {
+            if ((namajalan == null)) {
                 this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(erte));
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(namajalan));
+            }
+            if ((erte == null)) {
+                throw new global::System.ArgumentNullException("erte");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(erte));
             }
             if ((erwe == null)) {
-                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("erwe");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(erwe));
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(erwe));
             }
             if ((kelur == null)) {
-                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("kelur");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(kelur));
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(kelur));
             }
             if ((kecam == null)) {
-                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("kecam");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(kecam));
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(kecam));
             }
             if ((kabup == null)) {
-                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("kabup");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(kabup));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(kabup));
             }
             if ((prov == null)) {
-                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("prov");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(prov));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(prov));
             }
             if ((kodpos == null)) {
-                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("kodpos");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(kodpos));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(kodpos));
             }
             if ((bayar == null)) {
-                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("bayar");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(bayar));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(bayar));
             }
-            this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(Original_Format_id));
-            if ((Original_namauser == null)) {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
+            if ((harga == null)) {
+                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(harga));
+            }
+            if ((produk == null)) {
                 this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Original_namauser));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(produk));
+            }
+            this.Adapter.UpdateCommand.Parameters[13].Value = ((int)(Original_Format_id));
+            if ((Original_namauser == null)) {
+                throw new global::System.ArgumentNullException("Original_namauser");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(Original_namauser));
             }
             if ((Original_nohp == null)) {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("Original_nohp");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(Original_nohp));
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(Original_nohp));
+            }
+            if ((Original_namajalan == null)) {
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((string)(Original_namajalan));
             }
             if ((Original_erte == null)) {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("Original_erte");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(Original_erte));
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((string)(Original_erte));
             }
             if ((Original_erwe == null)) {
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("Original_erwe");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((string)(Original_erwe));
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((string)(Original_erwe));
             }
             if ((Original_kelur == null)) {
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[20].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("Original_kelur");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(0));
                 this.Adapter.UpdateCommand.Parameters[20].Value = ((string)(Original_kelur));
             }
             if ((Original_kecam == null)) {
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[22].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("Original_kecam");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((string)(Original_kecam));
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((string)(Original_kecam));
             }
             if ((Original_kabup == null)) {
-                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[24].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("Original_kabup");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[24].Value = ((string)(Original_kabup));
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((string)(Original_kabup));
             }
             if ((Original_prov == null)) {
-                this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[26].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("Original_prov");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[26].Value = ((string)(Original_prov));
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((string)(Original_prov));
             }
             if ((Original_kodpos == null)) {
-                this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[28].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("Original_kodpos");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[28].Value = ((string)(Original_kodpos));
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((string)(Original_kodpos));
             }
             if ((Original_bayar == null)) {
-                this.Adapter.UpdateCommand.Parameters[29].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[30].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("Original_bayar");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[29].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[30].Value = ((string)(Original_bayar));
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((string)(Original_bayar));
             }
-            this.Adapter.UpdateCommand.Parameters[31].Value = ((int)(Format_id));
+            if ((Original_harga == null)) {
+                this.Adapter.UpdateCommand.Parameters[26].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[27].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[26].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[27].Value = ((string)(Original_harga));
+            }
+            if ((Original_produk == null)) {
+                this.Adapter.UpdateCommand.Parameters[28].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[29].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[28].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[29].Value = ((string)(Original_produk));
+            }
+            this.Adapter.UpdateCommand.Parameters[30].Value = ((int)(Format_id));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1686,6 +1706,7 @@ SELECT Format_id, namauser, nohp, erte, erwe, kelur, kecam, kabup, prov, kodpos,
         public virtual int Update(
                     string namauser, 
                     string nohp, 
+                    string namajalan, 
                     string erte, 
                     string erwe, 
                     string kelur, 
@@ -1694,9 +1715,12 @@ SELECT Format_id, namauser, nohp, erte, erwe, kelur, kecam, kabup, prov, kodpos,
                     string prov, 
                     string kodpos, 
                     string bayar, 
+                    string harga, 
+                    string produk, 
                     int Original_Format_id, 
                     string Original_namauser, 
                     string Original_nohp, 
+                    string Original_namajalan, 
                     string Original_erte, 
                     string Original_erwe, 
                     string Original_kelur, 
@@ -1704,8 +1728,10 @@ SELECT Format_id, namauser, nohp, erte, erwe, kelur, kecam, kabup, prov, kodpos,
                     string Original_kabup, 
                     string Original_prov, 
                     string Original_kodpos, 
-                    string Original_bayar) {
-            return this.Update(namauser, nohp, erte, erwe, kelur, kecam, kabup, prov, kodpos, bayar, Original_Format_id, Original_namauser, Original_nohp, Original_erte, Original_erwe, Original_kelur, Original_kecam, Original_kabup, Original_prov, Original_kodpos, Original_bayar, Original_Format_id);
+                    string Original_bayar, 
+                    string Original_harga, 
+                    string Original_produk) {
+            return this.Update(namauser, nohp, namajalan, erte, erwe, kelur, kecam, kabup, prov, kodpos, bayar, harga, produk, Original_Format_id, Original_namauser, Original_nohp, Original_namajalan, Original_erte, Original_erwe, Original_kelur, Original_kecam, Original_kabup, Original_prov, Original_kodpos, Original_bayar, Original_harga, Original_produk, Original_Format_id);
         }
     }
     

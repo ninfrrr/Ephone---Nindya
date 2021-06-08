@@ -20,11 +20,20 @@ namespace Ephone
         SqlDataAdapter adpt;
         DataTable dt;
         int ID;
+        string namaproduk;
+        int hargaproduk;
+        int jumlahproduk = 1;
 
-        public formatOrder()
+        public formatOrder(string produkname, int price)
         {
             InitializeComponent();
+            namaproduk = produkname;
+            hargaproduk = price;
             con = new SqlConnection(path);
+            txtjumlah.Text = "1";
+            int hargatotal = hargaproduk * jumlahproduk;
+            txttotal.Text = hargatotal.ToString();
+            txtProduk.Text = namaproduk;
             display();
         }
 
@@ -35,17 +44,8 @@ namespace Ephone
 
         private void btorder_Click(object sender, EventArgs e)
         {
-            string namauser = txtnama.Text;
-            string nohape = txtno.Text;
-            string namajalan = txtjalan.Text;
-            string erte = txtrt.Text;
-            string erwe = txtrw.Text;
-            string kelur = txtkel.Text;
-            string kecam = txtkec.Text;
-            string kabup = txtkab.Text;
-            string prov = txtprov.Text;
-            string pos = txtkode.Text;
-            if(txtnama.Text=="" || txtno.Text == "" || txtjalan.Text=="" || txtrt.Text=="" || txtrw.Text=="" || txtkel.Text=="" || txtkec.Text==""||txtkab.Text==""||txtprov.Text==""||txtkode.Text=="")
+
+            if (txtnama.Text=="" || txtno.Text == "" || txtjalan.Text=="" || txtrt.Text=="" || txtrw.Text=="" || txtkel.Text=="" || txtkec.Text==""||txtkab.Text==""||txtprov.Text==""||txtkode.Text==""|| txttotal.Text==""|| txtProduk.Text=="")
             {
                 MessageBox.Show("Please fill in the blanks!!!"); 
             }
@@ -63,7 +63,7 @@ namespace Ephone
                         bayar = "e-Money";
                     }
                     con.Open();
-                    cmd = new SqlCommand("insert into beli (namauser, nohp, namajalan, erte, erwe, kelur, kecam, kabup, prov, kodpos, bayar)values('" + txtnama.Text + "', '" + txtno.Text + "', '" + txtjalan.Text + "', '" + txtrt.Text + "', '" + txtrw.Text + "', '" + txtkel.Text + "', '" + txtkec.Text + "', '" + txtkab.Text + "', '" + txtprov.Text + "', '" + txtkode.Text + "', '" + bayar + "')", con);
+                    cmd = new SqlCommand("insert into beli (namauser, nohp, namajalan, erte, erwe, kelur, kecam, kabup, prov, kodpos, bayar, harga, produk)values('" + txtnama.Text + "', '" + txtno.Text + "', '" + txtjalan.Text + "', '" + txtrt.Text + "', '" + txtrw.Text + "', '" + txtkel.Text + "', '" + txtkec.Text + "', '" + txtkab.Text + "', '" + txtprov.Text + "', '" + txtkode.Text + "', '" + bayar + "', '"+ txttotal.Text +"', '"+ txtProduk.Text +"')", con);
                     cmd.ExecuteNonQuery();
                     con.Close();
                     MessageBox.Show("Your data has been saved in the database!");
@@ -188,6 +188,21 @@ namespace Ephone
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void updateproduk_Click(object sender, EventArgs e)
+        {
+            jumlahproduk = Convert.ToInt32(txtjumlah.Text);
+            int hargatotal = hargaproduk * jumlahproduk;
+            txttotal.Text = hargatotal.ToString();
+        }
+
+        public static int testhitung(int count)
+        {
+            int harga = 10499999;
+            int jumlahproduk = count;
+            int rumus = harga * jumlahproduk;
+            return rumus;
         }
     }
 }

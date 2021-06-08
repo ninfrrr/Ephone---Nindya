@@ -12,7 +12,6 @@ namespace Ephone
 {
     public partial class pricelistS10 : Form
     {
-        formatOrder formor = new formatOrder();
 
         public pricelistS10()
         {
@@ -26,9 +25,10 @@ namespace Ephone
 
         private void bt10p_Click(object sender, EventArgs e)
         {
+            formatOrder formor = new formatOrder("s10+", 11499999);
             if (formor.IsDisposed == true)
             {
-                formor = new formatOrder();
+                formor = new formatOrder("s10+", 11499999);
             }
             MessageBox.Show("Harga S10+: Rp 11.499.999");
             formor.Show();
@@ -36,9 +36,10 @@ namespace Ephone
 
         private void bt10e_Click(object sender, EventArgs e)
         {
+            formatOrder formor = new formatOrder("s10e", 9999999);
             if (formor.IsDisposed == true)
             {
-                formor = new formatOrder();
+                formor = new formatOrder("s10e", 9999999);
             }
             MessageBox.Show("Harga S10e: Rp 9.999.999");
             formor.Show(); 
@@ -46,9 +47,10 @@ namespace Ephone
 
         private void bt10_Click_1(object sender, EventArgs e)
         {
+            formatOrder formor = new formatOrder("s10", 10499999);
             if (formor.IsDisposed == true)
             {
-                formor = new formatOrder();
+                formor = new formatOrder("s10", 10499999);
             }
             MessageBox.Show("Harga S10: Rp 10.499.999");
             formor.Show();

@@ -127,7 +127,7 @@ namespace Ephone
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(165)))), ((int)(((byte)(119)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(166)))), ((int)(((byte)(156)))));
             this.ClientSize = new System.Drawing.Size(1029, 593);
             this.Controls.Add(this.bts21);
             this.Controls.Add(this.btS10);

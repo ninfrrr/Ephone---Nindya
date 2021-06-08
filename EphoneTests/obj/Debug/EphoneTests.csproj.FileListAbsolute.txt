@@ -1,0 +1,17 @@
+D:\ephone\7juniupdate\EphoneTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+D:\ephone\7juniupdate\EphoneTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+D:\ephone\7juniupdate\EphoneTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+D:\ephone\7juniupdate\EphoneTests\bin\Debug\EphoneTests.dll
+D:\ephone\7juniupdate\EphoneTests\bin\Debug\EphoneTests.pdb
+D:\ephone\7juniupdate\EphoneTests\bin\Debug\Ephone.exe
+D:\ephone\7juniupdate\EphoneTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+D:\ephone\7juniupdate\EphoneTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+D:\ephone\7juniupdate\EphoneTests\bin\Debug\Ephone.pdb
+D:\ephone\7juniupdate\EphoneTests\bin\Debug\Ephone.exe.config
+D:\ephone\7juniupdate\EphoneTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+D:\ephone\7juniupdate\EphoneTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+D:\ephone\7juniupdate\EphoneTests\obj\Debug\EphoneTests.csprojAssemblyReference.cache
+D:\ephone\7juniupdate\EphoneTests\obj\Debug\EphoneTests.csproj.CoreCompileInputs.cache
+D:\ephone\7juniupdate\EphoneTests\obj\Debug\EphoneTests.csproj.CopyComplete
+D:\ephone\7juniupdate\EphoneTests\obj\Debug\EphoneTests.dll
+D:\ephone\7juniupdate\EphoneTests\obj\Debug\EphoneTests.pdb
